@@ -1,0 +1,33 @@
+DROP TABLE events;
+
+CREATE TABLE events(
+	id INTEGER(10) AUTO_INCREMENT NOT NULL,
+	event_name VARCHAR(250) NOT NULL,
+	scheduled_date ,
+	start_time ,
+	end_time ,
+	start_hour ,
+	short_note ,
+	blurb ,
+	organization_name,
+	organization_link,
+	outside_org_boolean,
+	wfc_org_id,
+	presenter_name,
+	presenter_link,
+	on_campus_boolean,
+	on_campus_room_id,
+	outside_venue,
+	map_url,
+	info_link,
+	childcare_boolean,
+	language_id,
+	accessibility_boolean,
+	contact_person,
+	contact_email,
+	contact_phone,
+	hashtag,
+	created_at,
+	updated_at,
+	PRIMARY KEY (id)
+);
