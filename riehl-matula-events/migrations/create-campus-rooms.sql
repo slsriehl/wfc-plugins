@@ -4,7 +4,9 @@ CREATE TABLE campus_rooms(
 	id INTEGER(10) AUTO_INCREMENT NOT NULL,
 	room_name VARCHAR(50) NOT NULL,
 	room_accessible BOOLEAN,
-	PRIMARY KEY (id)
+	accessibility_id INTEGER(10),
+	PRIMARY KEY (id),
+	FOREIGN KEY accessibility_id REFERENCES accessibility_level (id)
 );
 
 INSERT INTO campus_rooms (room_name)
