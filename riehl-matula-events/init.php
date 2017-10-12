@@ -53,7 +53,7 @@ $html = '';
 $htmlContactContact = '';
 $htmlPageSection = '';
 
-function upcoming_events_shortcode()
+function upcoming_events_page_shortcode()
 {
     global $wpdbEvent;
 
@@ -135,13 +135,20 @@ function upcoming_events_shortcode()
 				if($row->info_link) {
 					$html .= '<h5>Learn more at ' . $row->info_link . '</h5>';
 				}
-			//seventh line: OPTIONAL childcare will be available
+			//seventh line: REQUIRED family friendly
+			if($row->family_friendly_boolean == '1') {
+				$html .= '<h5>This event is family friendly</h5>';
+			} else {
+				$html .= '<h5>This event is not family friendly</h5>';
+			}
+
+			//eighth line: OPTIONAL childcare will be available
 
 			if($row->childcare_boolean == '1') {
 				$html .= '<h5>Complimentary childcare will be available</h5>';
 			}
 
-			//eighth line: OPTIONAL language or interpretation
+			//ninth line: OPTIONAL language or interpretation
 
 			if($row->language_id !== null) {
 				global $wpdbLanguage;
@@ -149,13 +156,13 @@ function upcoming_events_shortcode()
 				$html .= '<h5>' . $rowLanguage->language_name . ' translation will be available</h5>';
 			}
 
-			//ninth line: accessibility
+			//tenth line: accessibility
 
 			if($row->accessibility_boolean == '1') {
 				$html .= '<h5>This venue is accessible.</h5>';
 			}
 
-			//tenth line: contact person at contact info
+			//eleventh line: contact person at contact info
 			if($row->contact_email && $row->contact_phone) {
 				$html .= '<h5><em>Contact ' . $row->contact_person . ' at <a target="_blank" href="mailto:' . $row->contact_email . '">' . $row->contact_email . '</a> or <a href="tel:+1"' . $row->contact_phone . '">' . $row->contact_phone . '</a> for more details.</em></h5>';
 			} elseif($row->contact_email) {
@@ -165,15 +172,15 @@ function upcoming_events_shortcode()
 			}
 
 
-			//eleventh line: OPTIONAL use hashtag hashtag
+			//twelfth line: OPTIONAL use hashtag hashtag
 
 			if($row->hashtag) {
 				$html .= '<h5>Use hashtag #' . $row->hashtag . ' in your social media posts.</h5>';
 			}
 
 
-			//twelfth: CHECKBOX - outside organization disclaimer and 501c3 status statement
-        if($row->outside_org_boolean == '1') {
+			//thirteenth line: CHECKBOX - outside organization disclaimer and 501c3 status statement
+        if($row->outside_org_boolean == '1' || $row->advocacy_demonstration_boolean) {
 					$html .= '<h6><em>This event is not sponsored by Wildflower Church.  We are a 501(c)(3) organization and inclusion of this event in our calendar does not constitute an endorsement of a political candidate or policy position.  It is provided for information purposes only.  Please direct any legal questions to <a target="_blank" href="mailto:secretary@wildflowerchurch.org">secretary@wildflowerchurch.org</a></em></h6>';
 				}
 
@@ -189,6 +196,10 @@ function upcoming_events_shortcode()
 
 function constant_contact_events_shortcode() {
 	return $htmlConstantContact;
+}
+
+function front_page_shortcode() {
+
 }
 
 add_shortcode('upcoming_events', 'upcoming_events_shortcode');
