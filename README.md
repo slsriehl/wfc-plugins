@@ -3,65 +3,62 @@
 
 ## EVENTS PLUGIN TODOS
 
-### Completed work
-10/12/17 - Sarah has fleshed out the html for for event entry, but the form element names are not all current and the logic in this file is outdated.  The migrations have been worked on some, but the events table definition needs to be brought current when the event entry logic is correct.
-https://github.com/slsriehl/wfc-plugins/riehl-matula-events/php/events-create.php
-
-
 ### OneBody
-	* determine extent of tools that would integrate well with this project and provide tools to users and Lin
-	* should the DB of events, etc be hosted by OneBody with API calls to populate shortcodes on our site?
+* determine extent of tools that would integrate well with
 
-### Events entry html, display and post logic
-	* finish adding todos
-		* make sure post field names are correct
-		* separate parts of form into separate html php files  
-	* separate logic files
-		* add db calls to populate and loops to iterate, one for each html file
-		* move form post logic into own php file
-		* finalize post fields
-		* update variables created based on post fields
-		* update arrays to save to separate db tables
+### HTML
+* view all room requests
+* view one room request - summary
+* view one room request - editable
+* view all events
+* view one event - summary
+* edit or delete an event - editable
 
-### Events update html, display and post logic
+### Logic  
+* finish create event
+* ancillary queries and saves
+* incorporate google calendar api for space use and all events (save calendar entry id to events db)
+* GET view all room requests
+* GET view one room request - summary
+* GET view one room request - editable
+* POST schedule room request
+* GET view all events
+* GET view one event - summary
+* GET edit or delete an event - editable
+* POST edit or delete an event (change or add google cal reservations for space use and all events)
 
 ### JS, CSS
-	* stylesheets
-		* default WP or bootstrap
-		* gulp sass
-	* js
-		* jquery, built into WP or add?
-		* self authored, gulp concat
+#### stylesheets
+* default WP or bootstrap
+* gulp sass
+#### js
+* self authored jquery, gulp concat
 
 ### Migrations
-	* get more info for accessibility table
-	* make some default contacts
-	* double check foreign keys
-	* double check column names against post arrays in events entry and update
-	* add migration for room requests or sync to OneBody (check with Terry)
+* update based on current save arrays
+* get more info for accessibility table
+* double check foreign keys
+* double check column names against post arrays in events entry and update
+* add migration for room requests or sync to OneBody (check with Terry)
 
 ### Shortcodes
-	events display on events page
-	events display (non RE) for front page
-	events display (RE) for front page
-	events display for RE page
-	events display confirmation for team enterers
-	events display for room requests (Lin, may be obviated by **OneBody?**)
-	
+* events display on events page
+* events display (non RE) for front page
+* events display (RE) for front page
+* events display for RE page
+* events HTML generation for weekly email
+
 ### init.php
 
 ### Notifications
 	**OneBody?**
-	* email Lin for room requests
-	* email Lin for calendar requests
-	* email creators with successful room requests and any todos to finish their listing for web display
-	* email creators with successful calendar requests
-	* email creators with calendar conflicts
+* email Lin for room requests with link to login and view
+* email creators with successful room requests and any todos to finish their listing for web display with link to login and view
 
 ### Documentation
-	* for team members and lin
+* for team members and lin
 
 ### Deployment
-	* test on local, bug fixes
-	* migrate to production db
-	* install and troubleshoot plugin in the middle of the week
+* test on local, bug fixes
+* migrate to production db
+* install and troubleshoot plugin in the middle of the week
