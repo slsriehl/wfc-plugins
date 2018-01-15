@@ -53,4 +53,4 @@ More reading topics if you have spare screen time:
 
 1. General web development interest: Learn about Sass/scss and LESS.  There are some exciting and complex new front-end frameworks, like React and Angular 2.  Another front-end topic is current trends in task runners and bundlers (the new hotness is Webpack).  
 
-One way to get around the screen time constraints is to see if your parents will buy you paper books on the things that really catch your interest :).
+One way to get around the screen time constraints is to acquire paper books on the things that really catch your interest.  Things move fast in the dev world, so the newer, the better :).
