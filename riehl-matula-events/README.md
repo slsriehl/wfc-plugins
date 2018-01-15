@@ -6,13 +6,13 @@
 
 1. Once Homebrew is installed, we need node and php5.6.  For node, run:
 
-        ```bash
+        ```
         brew install node
         ```
 
 1. For php5.6, we need to tell brew to access a list of php formulae.  So, one at a time, run:
 
-        ```bash
+        ```
         brew tap homebrew/php
         brew install php56
         brew services start homebrew/php/php56
@@ -35,7 +35,7 @@
 1.  Git keeps a complete version history and you can revert back to a previous commit at any time.  Don't be afraid to break anything or take chances in your code -- if you're going to go out on a limb, make sure you commit before you start reaching, and everything will be fine.
 
 1.  When you want to commit, here's the flow again:
-        ```bash
+        ```
         git status
         git add src/ready.js (or git add -A to add everything that showed up in git status)
         git commit -m "message"
