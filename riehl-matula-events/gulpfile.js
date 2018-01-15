@@ -88,9 +88,10 @@ gulp.task('concat-js', function() {
 
 // dev task to compile and reload in development
 gulp.task('dev', ['browser-sync', 'compile-concat-scss', 'concat-js'], function() {
-		gulp.watch('./src/scss/*.scss', ['compile-concat-scss']);
-		gulp.watch('./src/js/*.js', ['concat-js']);
+		gulp.watch('./src/scss/*.scss', ['compile-concat-scss', reload]);
+		gulp.watch('./src/js/*.js', ['concat-js', reload]);
 		// Reloads the browser whenever PHP, CSS, or JS files change
+		gulp.watch('./*.php', [reload]);
 		gulp.watch('./php/*.php', [reload]);
 		gulp.watch('./php/*/*.php', [reload]);
 		gulp.watch('./assets/css/*.css', [reload]);
