@@ -7,16 +7,16 @@
 1. Once Homebrew is installed, we need node and php5.6.  For node, run:
 
         ```bash
-				brew install node
-				```
+        brew install node
+        ```
 
 1. For php5.6, we need to tell brew to access a list of php formulae.  So, one at a time, run:
 
         ```bash
-				brew tap homebrew/php
-				brew install php56
-				brew services start homebrew/php/php56
-				```
+        brew tap homebrew/php
+        brew install php56
+        brew services start homebrew/php/php56
+        ```
 
 1. Learn more about maintaining your Homebrew installation: read up on the commands ```brew list, brew update, brew upgrade, brew doctor```.
 
@@ -36,13 +36,13 @@
 
 1.  When you want to commit, here's the flow again:
         ```bash
-				git status
-				git add src/ready.js (or git add -A to add everything that showed up in git status)
-				git commit -m "message"
-				git status (make sure the stage is clear)
-				git pull (resolve conflicts)
-				git push origin liam (origin is the name of the github copy of the code, called a remote.  liam is the name of your branch)
-				```
+        git status
+        git add src/ready.js (or git add -A to add everything that showed up in git status)
+        git commit -m "message"
+        git status (make sure the stage is clear)
+        git pull (resolve conflicts)
+        git push origin liam (origin is the name of the github copy of the code, called a remote.  liam is the name of your branch)
+        ```
 ## Reading topics
 
 More reading topics if you have spare screen time:
